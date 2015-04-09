@@ -33,6 +33,7 @@
 #if __ANDROID_API__ >= 21
   #include "cinder/android/CinderCamera2.h"
 #endif
+#include "cinder/android/CinderLocationManager.h"
 #include "cinder/android/UrlLoader.h"
 
 #include <android/api-level.h>
@@ -54,6 +55,7 @@ PlatformAndroid::PlatformAndroid()
 #if __ANDROID_API__ >= 21
 	ci::android::CinderCamera2::cacheJni();
 #endif	
+	ci::android::CinderLocationManager::cacheJni();
 
 	ImageSourceFileRadiance::registerSelf();
 	ImageSourceFileStbImage::registerSelf();
