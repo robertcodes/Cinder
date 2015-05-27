@@ -12,6 +12,7 @@ import org.libcinder.app.Platform;
 import org.libcinder.hardware.CinderCamera;
 import org.libcinder.hardware.CinderCamera2;
 import org.libcinder.net.UrlLoader;
+import org.libcinder.location.CinderLocationManager;
 
 public class SampleActivity extends ActionBarActivity implements View.OnClickListener {
 
@@ -25,7 +26,9 @@ public class SampleActivity extends ActionBarActivity implements View.OnClickLis
     @Override
     public void onClick(View view) {
         Log.i("libcinder", "onClick called");
-        runTests();
+        //runTests();
+        CinderLocationManager.initialize();
+        CinderLocationManager.enable();
     }
 
     @Override

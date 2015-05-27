@@ -43,7 +43,7 @@ public class CinderLocationManager implements LocationListener {
         if (mProvider != null) {
             Log.d(Platform.TAG, "LocationManager created");
         } else {
-            Log.e(Platform.TAG, "LocationManager could not locate appropriate GPS provider.  Check AndroidManifest.xml for appropriate uses-permissions for location.");
+            Log.e(Platform.TAG, "LocationManager could not locate appropriate location provider.  Check AndroidManifest.xml for appropriate uses-permissions for location.");
         }
     }
 
@@ -150,7 +150,7 @@ public class CinderLocationManager implements LocationListener {
     }
 
     public static boolean isEnabled() {
-        return (null != sLocationManager && sLocationManager.isEnabled());
+        return (null != sLocationManager && sLocationManager.hasProvider());
     }
 
     //public static LocationEvent getMostRecentLocation() { /* return sMostRecentLocation; */ }

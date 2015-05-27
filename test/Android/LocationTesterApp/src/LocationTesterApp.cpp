@@ -30,6 +30,7 @@ class LocationTesterApp : public App {
 void LocationTesterApp::setup()
 {
     mLocationManager.initialize();
+
 }
 
 void LocationTesterApp::mouseDrag( MouseEvent event )

@@ -62,6 +62,8 @@ void CinderLocationManager::cacheJni()
 		jclass cinderLocationManagerClass = JniHelper::Get()->RetrieveClass( className );
 		if( nullptr != cinderLocationManagerClass ) {
 			CinderLocationManager::sCinderLocationManagerClass = reinterpret_cast<jclass>( JniHelper::Get()->NewGlobalRef( cinderLocationManagerClass ) );
+		} else {
+			LOGE( "Unable to locate the LocationManager class" );
 		}
 
 		if( nullptr != CinderLocationManager::sCinderLocationManagerClass ) {
